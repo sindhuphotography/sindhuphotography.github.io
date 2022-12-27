@@ -1,17 +1,22 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "name": "photorama",
+  "version": "1.0.0",
+  "description": "Theme by [Start Bootstrap](http://startbootstrap.com/).",
+  "main": "Gruntfile.js",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunbliss/photorama.git"
+  },
+  "author": "Anna Prigkipaki",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sunbliss/photorama/issues"
+  },
+  "homepage": "http://sunbliss.github.io",
+  "dependencies": {
+    "searchkit": "^0.7.0"
   }
 }

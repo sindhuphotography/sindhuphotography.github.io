@@ -1,41 +1,158 @@
-<!doctype html>
-<html class="no-js" lang="">
+---
+layout: home
+main-title: "Sindhu&#8226;Creative&#8226;Photography"
+subtitle: "Photography"
+description: "Photography and more"
+images:
+ - image_path: /img/slider/home01.jpg
+   gallery-folder: /img/slider/
+ - image_path: /img/slider/home02.jpg
+   gallery-folder: /img/slider/
+ - image_path: /img/slider/home03.jpg
+   gallery-folder: /img/slider/
+---
 
+
+<html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="charset=utf-8">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+<!-- CSS -->
+     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="{{ site.baseurl }}/css/galleries.css" media="screen" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/WYSIWYG.css" media="screen" />
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+	<!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+
+  
+
 </head>
 
-<body>
+<body class="fullscreen">
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<!-- MAIN CONTENT SECTION  _____________________________________________-->
+	<section id="content" role="main">
+		<div class="wrapper">
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
+			<!-- WYSIWYG -->
 
-</html>
+		<div class="position-absolute">
+				<h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2>
+				<h2>{{ page.subtitle }}</h2> 
+                     <div class="entry-summary">
+							<p>{{ page.description }}</p>
+						</div><br />
+			</div>
+			
+			<div class="gallery fullscreen-gallery kenburns-gallery">
+
+				<canvas id="kenburns"></canvas>
+				
+{% for image in page.images %}  	
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+	
+				</header>	
+				</figure>
+
+{% endfor %}
+
+				</div>
+			<!-- END WYSIWYG -->
+			
+	
+		</div><!-- END .wrapper -->
+		
+	</section>
+
+<div id="footer" role="contentinfo">
+		<ul class="soc-icons">
+
+                 {% if site.facebook_username %}
+			<li>
+   <a href="https://facebook.com/{{ site.facebook_username }}" style="
+color:#dddddd; target="_blank" title="Facebook">
+                       <i class="fa fa-facebook"></i>
+                     </span>
+</a></li>
+    {% endif %}
+ {% if site.twitter_username %}
+			<li>
+   <a href="https://twitter.com/{{ site.twitter_username }}" style="
+color:#dddddd; target="_blank" title="Twitter">
+                       <i class="fa fa-twitter"></i>
+                     </span>
+</a></li>
+    {% endif %}
+                {% if site.instagram_username %}
+			<li>
+   <a href="https://instagram.com/{{ site.instagram_username }}" style="
+color:#dddddd; target="_blank" title="Instagram">
+                       <i class="fa fa-instagram"></i>
+                     </span>
+</a></li>
+    {% endif %}
+                    {% if site.flickr_username %}
+						<li>
+   <a href="https://flickr.com/photos/{{ site.flickr_username }}" style="
+color:#dddddd; target="_blank" title="Flickr">
+              <i class="fa fa-flickr"></i>
+                     </span>
+ </a></li>	
+     {% endif %}
+                    {% if site.deviantart_username %}
+			<li>
+   <a href="http://{{ site.deviantart_username }}.deviantart.com" style="
+color:#dddddd; target="_blank" title="DeviantArt">
+<i class="fa fa-deviantart"></i> </span>
+</a></li>	
+    {% endif %}
+                    {% if site.github_username %}
+                <li>
+   <a href="https://github.com/{{ site.github_username }}" style="
+color:#dddddd; target="_blank" title="Github">
+              <i class="fa fa-github"></i>
+                     </span>
+                   {% endif %}
+<li>
+    <a href="mailto:{{ site.email }}" style="
+color:#dddddd; target="_blank" title="Email">
+              <i class="fa fa-envelope-o"></i></span>
+          </a> </li>
+	
+					
+		</ul>	
+	</div>
+
+  
+<!-- jQuery -->
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script> 
+
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+<!-- include gallery cycle plugin -->
+<script src="{{ site.baseurl }}/js/jquery.cycle.min.js"></script>
+<!-- include kenburns plugins -->
+<script src="{{ site.baseurl }}/js/kenburns.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+
+
+       </body>
+    </html>
+
